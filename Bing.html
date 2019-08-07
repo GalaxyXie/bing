@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <title>Bird</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/ext-all.css" />
+    <!-- LIBS -->
+    <script type="text/javascript" src="../adapter/ext/ext-base.js"></script>
+    <!-- ENDLIBS -->
+    <script type="text/javascript" src="../ext-all.js"></script>
+    <script>
+        Ext.onReady(function() {
+            var container = new Ext.Container({
+                renderTo: 'bing',
+                width: 900,
+                cls:'bing',
+                layout: 'table',
+                items: [
+                    {
+                        colspan: 2,
+                        width: 900,
+                        layout: 'hbox',
+                        layoutConfig: {pack: 'left'},
+                        xtype: 'container',
+                        items: [{
+                            xtype: 'box',
+                            height: 70,
+                            autoEl: {
+                                tag: 'img',
+                                src: 'bing.png'
+                            }
+                        },
+                            {
+                                height: 70,
+                                width: 700,
+                                activeTab: 0,
+                                xtype: 'tabpanel',
+                                // items:[{
+                                //     title: '国内版',
+                                //     xtype: 'trigger',
+                                //     triggerClass:"x-form-search-trigger",
+                                //
+                                // },{
+                                //     title: '国际版',
+                                //     xtype: 'trigger',
+                                //     triggerClass:"x-form-search-trigger"
+                                //
+                                // }]
+                                items: [{
+                                    colspan: 2,
+                                    layout: 'hbox',
+                                    xtype: 'container',
+                                    title: '国内版',
+                                    items: [{
+                                        xtype: 'field',
+                                        height: 50,
+                                        width: 650,
+                                    }, {
+                                        id: 'button1',
+                                        xtype: 'button',
+                                        icon:'search.png',
+                                        cls:'x-btn-icon',
+                                        width: 50,
+                                        height: 50
+                                    }]
+                                }, {
+                                    colspan: 2,
+                                    layout: 'hbox',
+                                    xtype: 'container',
+                                    title: '国际版',
+                                    items: [{
+                                        xtype: 'field',
+                                        height: 50,
+                                        width: 650
+                                    }, {
+                                        id: 'button2',
+                                        xtype: 'button',
+                                        icon:'search.png',
+                                        iconCls:'x-btn-icon',
+                                        width: 50,
+                                        height: 50,
+                                    }]
+                                },],
+
+                            }],
+                    }]
+            })
+        });
+    </script>
+
+</head>
+<style>
+    .bing{
+        /*margin-top: 30px;*/
+        margin: 300px auto;
+    }
+    .x-btn-icon .x-btn-small .x-btn-text{
+        height: 42px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        width: 45px;
+    }
+
+</style>
+<body>
+<div id="bing"></div>
+</body>
+
+</html>
